@@ -1,7 +1,7 @@
 {
-  "name": "dev-portal",
+  "name": "hackathon-portal",
   "version": "0.0.0",
-  "description": "Ericsson Cloud - Developer Portal",
+  "description": "Hackathon Portal",
   "author": "Idean",
   "scripts": {
     "start": "node ./server/server.js",
