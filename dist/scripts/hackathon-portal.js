@@ -179,7 +179,11 @@ angular.module('hackApp')
         url: '/sample-apps',
         templateUrl: hack.rootPath + '/dist/templates/routes/sample-apps/sample-apps.html',
         controller: 'SampleAppsCtrl'
-      },
+      }
+      
+      /*VANCE
+        
+       ,
       {
         isStateRoute: true,
         ref: 'drive-api',
@@ -187,7 +191,7 @@ angular.module('hackApp')
         url: '/drive-api',
         templateUrl: hack.rootPath + '/dist/templates/routes/drive-api/drive-api.html',
         controller: 'DriveApiCtrl'
-      }
+      }*/
     ])
     .constant('httpStatusCodes', {
       200: 'OK',
@@ -1231,7 +1235,8 @@ angular.module('animationsDirective', [])
           console.log('Triggering animation from the initial load of the page');
 
           var carScreen = document.getElementById('car-hero-screen');
-          var carScreenInitialAlpha = 0.7;
+          var carScreenInitialAlpha = 0.25;
+          console.log('Set Alpha to 2.5');
 
           var questionSet1 = [
             document.getElementById('car-question-set-1-question-1'),
@@ -1260,6 +1265,8 @@ angular.module('animationsDirective', [])
           scope.timeline = new TimelineMax();
 
           scope.timeline.add("start");
+
+          console.log('Starting timline');
 
           scope.timeline.add("set-1", "+=2");
           scope.timeline.add(TweenMax.from(carScreen, 1.5, {alpha:0}), "+=2");

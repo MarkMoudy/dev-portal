@@ -239,10 +239,10 @@ button[disabled] {
 	text-align: left;
 	overflow: hidden;
 	-webkit-transition: border-color .25s;
-	transition: border-color .25s
+	transition: border-color .25s;
 }
 .tab.selected {
-	border-color: #09f
+	border-color: #d51b5d
 }
 .tab:first-child {
 	margin-left: 0
@@ -356,7 +356,8 @@ h1 {
 .side-menu {
 	float: left;
 	width: 220px;
-	margin: 0 20px 0 0
+	margin: 0 20px 0 0;
+	/*background-color: #262223*/
 }
 .side-menu > li > a, .side-menu > li > div {
 	display: block;
@@ -392,7 +393,10 @@ h1 {
 	margin-bottom: 30px
 }
 .api-documentation-categories > li.selected {
-	color: #09f
+	/*
+	 color: #09f
+	 */
+	color: #d51b5d
 }
 a, a:active, a:hover, a:visited {
 	text-decoration: none
@@ -403,7 +407,10 @@ a, a:active, a:hover, a:visited {
 	transition: color .25s
 }
 .side-menu > li.selected > a {
-	color: #09f
+	/*
+	 color: #09f
+	 */
+	color: #d51b5d
 }
 .side-menu > li > hr.divider {
 	top: 0;
@@ -423,7 +430,7 @@ li[api-list-item] > hr.divider {
 }
 .api-list-item-header {
 	position: relative;
-	height: 35px;
+	height: 40px;
 	line-height: 35px;
 	overflow-x: visible;
 	overflow-y: hidden;
@@ -441,10 +448,11 @@ li[api-list-item] > hr.divider {
 	float: left;
 	width: 100px;
 	color: #fff;
-	background-color: #bfe5ff;
+	background-color: #f8c4d7;
 	text-align: center;
 	-webkit-transition: color .15s, background-color .15s;
-	transition: color .15s, background-color .15s
+	transition: color .15s, background-color .15s;
+	border-radius: 3px;
 }
 .api-list-item-header > .route {
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -462,7 +470,10 @@ li[api-list-item].none-selected .api-list-item-header, li[api-list-item].selecte
 }
 li[api-list-item].none-selected .api-list-item-header > .verb, li[api-list-item].selected .api-list-item-header > .verb {
 	color: #fff;
-	background-color: #09f
+	/*
+	 color: #09f
+	 */
+	background-color: #d51b5d
 }
 .api-list-item-body {
 	clear: both;
@@ -678,6 +689,25 @@ api-list:after {
 	left: 0;
 	z-index: 100
 }
+#ericsson-logo-icon {
+	display: block;
+	width: 46px;
+	height: 60px;
+	background: url(../images/ericsson_logo_white.svg);
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	z-index: 100
+}
+#ericsson-logo-text {
+	display: block;
+	height: 60px;
+	position: absolute;
+	top: 23px;
+	left: 200px;
+	font-size: 18px;
+	z-index: 100;
+}
 .car-hero {
 	position: absolute;
 	top: 0;
@@ -692,13 +722,13 @@ api-list:after {
 	width: 100%;
 	height: 100%;
 	background-color: #000;
-	opacity: .7;
+	opacity: .25;
 	z-index: 1
 }
 .car-question-set {
 	position: absolute;
 	top: 274px;
-	left: 469px;
+	left: 275px;
 	z-index: 10;
 	width: 800px;
 	font-style: good-news-sans-reg-ext
@@ -714,7 +744,8 @@ api-list:after {
 	position: absolute;
 	top: 45px;
 	left: 0;
-	color: #09F;
+	/*color: #09F;*/
+	color: #d51b5d;
 	font-size: 30pt
 }
 .car-question-style-bottom {

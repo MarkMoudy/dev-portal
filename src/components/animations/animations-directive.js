@@ -40,7 +40,7 @@ angular.module('animationsDirective', [])
           console.log('Triggering animation from the initial load of the page');
 
           var carScreen = document.getElementById('car-hero-screen');
-          var carScreenInitialAlpha = 0.7;
+          var carScreenInitialAlpha = 0.3;
 
           var questionSet1 = [
             document.getElementById('car-question-set-1-question-1'),
