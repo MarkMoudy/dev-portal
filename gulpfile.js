@@ -1,10 +1,15 @@
 // TODO: what kind of optimization can I do with the templates? inline them in the js?
 // TODO: should I actually NOT concatenate/minify the data files? this would require the other devs to run the build script when updating any data file...
 // TODO: add some actual tests for the runner to run
-
+/* VANCE
 var projectName = 'hackathon-portal',
 
     rootPath = '/hackathon-portal',
+    
+  */  
+var projectName = 'dev-portal',
+
+    rootPath = '/dev-portal',
     //rootPath = '',
 
     testsSrc = 'src/**/*_test.js',
