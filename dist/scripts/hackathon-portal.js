@@ -1136,7 +1136,7 @@ angular.module('uiKitApiService', [])
 
         // Iterate over the h1 elements within the overall converted markdown text
         while (result !== null) {
-          debugger;
+   //       debugger;
           // Set the markdown content of the previous section (now that we know where that section ends)
           sections[index - 1].convertedMarkdown = convertedMarkdown.substring(previousContentIndex, result.index);
 
@@ -1149,7 +1149,7 @@ angular.module('uiKitApiService', [])
           result = sectionHeaderRegex.exec(convertedMarkdown);
         }
 
-        debugger;
+   //     debugger;
 
         // Set the markdown content of the previous section (now that we know where that section ends)
         sections[index - 1].convertedMarkdown = convertedMarkdown.substring(previousContentIndex);
