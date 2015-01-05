@@ -260,7 +260,7 @@ button[disabled] {
   transition: border-color 0.25s; }
 
 .tab.selected {
-  border-color: #0099ff; }
+  border-color: #d51b5d; }
 
 .tab:first-child {
   margin-left: 0; }
@@ -301,7 +301,7 @@ h1 {
   text-transform: uppercase; }
 
 #title-part-1 {
-  color: #0099ff; }
+  color: #d51b5d; }
 
 #logos {
   position: relative;
@@ -407,7 +407,7 @@ h1 {
   margin-bottom: 30px; }
 
 .api-documentation-categories > li.selected {
-  color: #0099ff; }
+  color: #d51b5d; }
 
 a, a:active, a:hover, a:visited {
   text-decoration: none; }
@@ -417,7 +417,7 @@ a, a:active, a:hover, a:visited {
   transition: color 0.25s; }
 
 .side-menu > li.selected > a {
-  color: #0099ff; }
+  color: #d51b5d; }
 
 .side-menu > li > hr.divider {
   top: 0;
@@ -455,7 +455,7 @@ li[api-list-item] > hr.divider {
   float: left;
   width: 100px;
   color: white;
-  background-color: #bfe5ff;
+  background-color: #f8c4d7;
   text-align: center;
   transition: color 0.15s, background-color 0.15s; }
 
@@ -475,7 +475,7 @@ li[api-list-item].selected .api-list-item-header, li[api-list-item].none-selecte
 
 li[api-list-item].selected .api-list-item-header > .verb, li[api-list-item].none-selected .api-list-item-header > .verb {
   color: white;
-  background-color: #0099ff; }
+  background-color: #d51b5d; }
 
 .api-list-item-body {
   clear: both;
