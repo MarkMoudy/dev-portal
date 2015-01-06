@@ -1735,6 +1735,20 @@ angular.module('apiDocumentationController', [])
 .controller('ApiDocumentationCtrl', function () {
 });
 
+'use strict';
+
+angular.module('gettingStartedController', [])
+
+/**
+ * @ngdoc object
+ * @name GettingStartedCtrl
+ * @description
+ *
+ * Controller for the Getting Started page.
+ */
+.controller('GettingStartedCtrl', function () {
+});
+
 angular.module('driveApiController', [])
     // TODO: rename this route; rename other routes; add other routes
     .controller('DriveApiCtrl', function ($scope, UiKitApi) {
@@ -1762,20 +1776,6 @@ angular.module('driveApiController', [])
         $scope.sampleAppsState.selectedSection = section;
       }
     });
-
-'use strict';
-
-angular.module('gettingStartedController', [])
-
-/**
- * @ngdoc object
- * @name GettingStartedCtrl
- * @description
- *
- * Controller for the Getting Started page.
- */
-.controller('GettingStartedCtrl', function () {
-});
 
 'use strict';
 
