@@ -72,7 +72,8 @@ angular.module('hackApp')
         url: '/api-documentation',
         templateUrl: hack.rootPath + '/dist/templates/routes/api-documentation/api-documentation.html',
         controller: 'ApiDocumentationCtrl'
-      },
+      }
+      /*,
       {
         isStateRoute: true,
         ref: 'sample-apps',
@@ -88,7 +89,7 @@ angular.module('hackApp')
         url: '/drive-api',
         templateUrl: hack.rootPath + '/dist/templates/routes/drive-api/drive-api.html',
         controller: 'DriveApiCtrl'
-      }
+      }*/
     ])
     .constant('httpStatusCodes', {
       200: 'OK',
@@ -237,6 +238,11 @@ angular.module('hackApp')
       {
         id: 'animation-4',
         label: 'set-4',
+        parameters: {}
+      },
+      {
+        id: 'animation-5',
+        label: 'set-5',
         parameters: {}
       }
     ]);

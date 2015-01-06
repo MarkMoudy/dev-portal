@@ -165,12 +165,20 @@ table {
 
 @font-face {
   font-family: hack-font;
+<<<<<<< HEAD
   src: url('/dist/fonts/hack-font.otf');
+=======
+  src: url('/dev-portal/dist/fonts/hack-font.otf');
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
   font-weight: normal; }
 
 @font-face {
   font-family: hack-font;
+<<<<<<< HEAD
   src: url('/dist/fonts/hack-font-bold.otf');
+=======
+  src: url('/dev-portal/dist/fonts/hack-font-bold.otf');
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
   font-weight: bold; }
 
 div, h1, h2, h3, h4, h5, ul, ol, dl, p, hr {
@@ -366,7 +374,11 @@ h1 {
   bottom: 34px; }
 
 .content-area > .tabs > .tab {
+<<<<<<< HEAD
   width: calc(25% - 15px); }
+=======
+  width: calc(20% - 16px); }
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
 
 .side-menu {
   float: left;
@@ -438,7 +450,11 @@ li[api-list-item] > hr.divider {
 
 .api-list-item-header {
   position: relative;
+<<<<<<< HEAD
   height: 40px;
+=======
+  height: 35px;
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
   line-height: 35px;
   overflow-x: visible;
   overflow-y: hidden;
@@ -455,10 +471,16 @@ li[api-list-item] > hr.divider {
   float: left;
   width: 100px;
   color: white;
+<<<<<<< HEAD
   background-color: #bfe5ff;
   text-align: center;
   transition: color 0.15s, background-color 0.15s;
   border-radius: 3px; }
+=======
+  background-color: #f8c4d7;
+  text-align: center;
+  transition: color 0.15s, background-color 0.15s; }
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
 
 .api-list-item-header > .route {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
@@ -686,7 +708,11 @@ api-list:after {
 
 @font-face {
   font-family: good-news-sans-reg-ext;
+<<<<<<< HEAD
   src: url('/dist/fonts/good-news-sans-reg-ext.otf');
+=======
+  src: url('/dev-portal/dist/fonts/good-news-sans-reg-ext.otf');
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
   font-weight: normal; }
 
 #top-bar {
@@ -728,7 +754,11 @@ api-list:after {
   width: 100%;
   height: 100%;
   background-color: black;
+<<<<<<< HEAD
   opacity: 0.25;
+=======
+  opacity: 0.3;
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
   z-index: 1; }
 
 .car-question-set {
@@ -736,7 +766,11 @@ api-list:after {
   top: 274px;
   left: 275px;
   z-index: 10;
+<<<<<<< HEAD
   width: 800px;
+=======
+  width: 1000px;
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
   font-style: good-news-sans-reg-ext; }
 
 .car-question-style-top {

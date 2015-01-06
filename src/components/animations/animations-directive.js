@@ -66,6 +66,12 @@ angular.module('animationsDirective', [])
             document.getElementById('car-question-set-4-question-3')
           ];
 
+          var questionSet5 = [
+            document.getElementById('car-question-set-5-question-1'),
+            document.getElementById('car-question-set-5-question-2'),
+            document.getElementById('car-question-set-5-question-3')
+          ];
+
           scope.timeline = new TimelineMax();
 
           scope.timeline.add("start");
@@ -92,6 +98,12 @@ angular.module('animationsDirective', [])
           scope.timeline.add(TweenMax.to(carScreen, 1.5, {alpha:carScreenInitialAlpha}), "+=2");
           scope.timeline.add(TweenMax.staggerFrom(questionSet4, 1.75, {x:"60", alpha:0}, 0.3), "-=1");
           scope.timeline.add(TweenMax.staggerTo(questionSet4, 1, {x:"-60", alpha:0}, 0.3), "+=3");
+          scope.timeline.add(TweenMax.to(carScreen, 0.75, {alpha:0}), "-=1");
+
+          scope.timeline.add("set-5", "+=2");
+          scope.timeline.add(TweenMax.to(carScreen, 1.5, {alpha:carScreenInitialAlpha}), "+=2");
+          scope.timeline.add(TweenMax.staggerFrom(questionSet5, 1.75, {x:"60", alpha:0}, 0.3), "-=1");
+          scope.timeline.add(TweenMax.staggerTo(questionSet5, 1, {x:"-60", alpha:0}, 0.3), "+=3");
           scope.timeline.add(TweenMax.to(carScreen, 0.75, {alpha:0}), "-=1");
 
           scope.timeline.add("end");

@@ -10,6 +10,7 @@ $button-active-background-color: rgb(0,0,0);
 $button-inactive-color: rgb(255,255,255);
 $button-inactive-background-color: rgb(102,102,102);
 
+<<<<<<< HEAD
 $tab-active-border-color: rgb(213, 27, 93);
 $tab-inactive-border-color: rgb(51,51,51);
 
@@ -18,11 +19,22 @@ $item-inactive-color: rgb(51,51,51);
 
 $verb-active-color: rgb(255,255,255);
 $verb-active-background-color: rgb(213, 27, 93);
+=======
+//$tab-active-border-color: rgb(213,27,93);
+$tab-active-border-color: rgb(213,27,93);
+$tab-inactive-border-color: rgb(51,51,51);
+
+$item-active-color: rgb(213,27,93);
+$item-inactive-color: rgb(51,51,51);
+
+$verb-active-color: rgb(255,255,255);
+$verb-active-background-color: rgb(213,27,93);
+>>>>>>> c72a56da3e37927ae61cc60077b1a48db7db56bc
 
 $card-inactive-color: rgb(191,191,191);
 
 $verb-inactive-color: rgb(255,255,255);
-$verb-inactive-background-color: rgb(191,229,255);
+$verb-inactive-background-color: rgb(248,196,215);
 
 $banner-color: rgb(255,255,255);
 $banner-background-color: rgb(7,7,7);
@@ -322,7 +334,7 @@ h1 {
 }
 
 .content-area>.tabs>.tab {
-  width: calc(25% - 15px);
+  width: calc(20% - 16px);
 }
 
 .home-route api-list {
