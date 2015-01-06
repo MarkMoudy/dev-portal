@@ -7,7 +7,7 @@
 
 <div class="api-list-item-body">
   <ul class="card-tabs tabs">
- <!--   <li ng-repeat="card in ['specification', 'example', 'try it']" -->
+ <!--   <li ng-repeat="card in ['specification', 'example', 'try it']" 
 <li ng-repeat="card in ['specification']"
 
         ng-click="apiItem.HackApi.currentCard = card"
@@ -16,13 +16,16 @@
       {{card}}
     </li>
   </ul>
-
+-->
   <api-specification-card ng-if="apiItem.HackApi.currentCard === 'specification'"
                           api-item="apiItem"></api-specification-card>
+
+                          <!--
   <api-example-card ng-if="apiItem.HackApi.currentCard === 'example'"
                     api-item="apiItem"></api-example-card>
   <api-try-it-card ng-if="apiItem.HackApi.currentCard === 'try it'"
                    api-item="apiItem"></api-try-it-card>
+                   -->
 </div>
 
 <hr class="divider">
