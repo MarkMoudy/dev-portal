@@ -7,7 +7,9 @@
 
 <div class="api-list-item-body">
   <ul class="card-tabs tabs">
-    <li ng-repeat="card in ['specification', 'example', 'try it']"
+ <!--   <li ng-repeat="card in ['specification', 'example', 'try it']" -->
+<li ng-repeat="card in ['specification']"
+
         ng-click="apiItem.HackApi.currentCard = card"
         ng-class="{selected: apiItem.HackApi.currentCard === card}"
         class="card-tab tab">

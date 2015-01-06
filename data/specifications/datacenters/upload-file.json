@@ -4,7 +4,7 @@
   "displayWeight": "100",
   "name": "Upload File",
   "description": "Upload a file after creating a metadata record with the dataguard api. Requires a token.",
-  "categories": ["datastore-api"],
+  "categories": ["datacenters"],
   "subCategories": [],
   "resourceTable": {
     "Route": "/dataguard/v1/storages/{id}",
