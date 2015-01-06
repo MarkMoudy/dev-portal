@@ -260,9 +260,9 @@ angular.module('hackApp')
 
     .constant('categories', [
 
-      {
+      /*{
         id: 'users',
-        name: 'Users',
+        name: 'Manage your Users',
         ref: 'api-documentation.users',
         specs: [
           'create-user',
@@ -272,7 +272,7 @@ angular.module('hackApp')
           'update-user'
         ]
       },
-      /*
+      
       {
         id: 'user-authentication',
         name: 'User Authentication',
@@ -284,7 +284,7 @@ angular.module('hackApp')
       */
       {
         id: 'file-api',
-        name: 'Files',
+        name: 'Know your Files',
         ref: 'api-documentation.file-api',
         specs: [
           'get-files',
@@ -298,7 +298,7 @@ angular.module('hackApp')
       },
       {
         id: 'datacenters',
-        name: 'Datacenters',
+        name: 'Manage your Data',
         ref: 'api-documentation.datacenters',
         specs: [
           'create-datacenter',
@@ -310,6 +310,18 @@ angular.module('hackApp')
           'delete-file'
         ]
       },
+       {
+        id: 'users',
+        name: 'Manage your Users',
+        ref: 'api-documentation.users',
+        specs: [
+          'create-user',
+          'delete-user',
+          'get-user',
+          'get-users',
+          'update-user'
+        ]
+      }/*,
       {
         id: 'datastore-api',
         name: 'DataStore API',
@@ -318,7 +330,7 @@ angular.module('hackApp')
           'upload-file',
           'delete-file'
         ]
-      }
+      }*/
 
     ])
 
@@ -1349,6 +1361,50 @@ angular.module('apiExampleCardDirective', [])
 
 'use strict';
 
+angular.module('apiListDirective', [])
+
+.constant('apiListTemplatePath', hack.rootPath + '/dist/templates/components/api-list/api-list.html')
+
+/**
+ * @ngdoc directive
+ * @name apiList
+ * @requires HackApi
+ * @requires apiListTemplatePath
+ * @description
+ *
+ * A footer list used for displaying a list of navigation links.
+ */
+.directive('apiList', function ($rootScope, HackApi, apiListTemplatePath) {
+  return {
+    restrict: 'E',
+    scope: {
+      category: '='
+    },
+    templateUrl: apiListTemplatePath,
+    link: function (scope, element, attrs) {
+      scope.apiListState = {};
+      scope.apiListState.apiData = [];
+      scope.apiListState.selectedItemId = null;
+
+      HackApi.getAllApiData()
+          .then(function (apiData) {
+            scope.apiListState.apiData = apiData;
+
+            if ($rootScope.selectedApi != null) {
+              scope.apiListState.selectedItemId = $rootScope.selectedApi.replace(/_/g, '.');
+              console.log(scope.apiListState.selectedItemId);
+            }
+          });
+
+      scope.$watch('category', function () {
+        scope.apiListState.selectedItemId = null;
+      });
+    }
+  };
+});
+
+'use strict';
+
 angular.module('apiListItemDirective', [])
 
 .constant('apiListItemTemplatePath', hack.rootPath + '/dist/templates/components/api-list-item/api-list-item.html')
@@ -1409,50 +1465,6 @@ angular.module('apiListItemDirective', [])
         
         $state.go(targetRef);
       };
-    }
-  };
-});
-
-'use strict';
-
-angular.module('apiListDirective', [])
-
-.constant('apiListTemplatePath', hack.rootPath + '/dist/templates/components/api-list/api-list.html')
-
-/**
- * @ngdoc directive
- * @name apiList
- * @requires HackApi
- * @requires apiListTemplatePath
- * @description
- *
- * A footer list used for displaying a list of navigation links.
- */
-.directive('apiList', function ($rootScope, HackApi, apiListTemplatePath) {
-  return {
-    restrict: 'E',
-    scope: {
-      category: '='
-    },
-    templateUrl: apiListTemplatePath,
-    link: function (scope, element, attrs) {
-      scope.apiListState = {};
-      scope.apiListState.apiData = [];
-      scope.apiListState.selectedItemId = null;
-
-      HackApi.getAllApiData()
-          .then(function (apiData) {
-            scope.apiListState.apiData = apiData;
-
-            if ($rootScope.selectedApi != null) {
-              scope.apiListState.selectedItemId = $rootScope.selectedApi.replace(/_/g, '.');
-              console.log(scope.apiListState.selectedItemId);
-            }
-          });
-
-      scope.$watch('category', function () {
-        scope.apiListState.selectedItemId = null;
-      });
     }
   };
 });

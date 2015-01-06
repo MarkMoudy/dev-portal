@@ -161,9 +161,9 @@ angular.module('hackApp')
 
     .constant('categories', [
 
-      {
+      /*{
         id: 'users',
-        name: 'Users',
+        name: 'Manage your Users',
         ref: 'api-documentation.users',
         specs: [
           'create-user',
@@ -173,7 +173,7 @@ angular.module('hackApp')
           'update-user'
         ]
       },
-      /*
+      
       {
         id: 'user-authentication',
         name: 'User Authentication',
@@ -185,7 +185,7 @@ angular.module('hackApp')
       */
       {
         id: 'file-api',
-        name: 'Files',
+        name: 'Know your Files',
         ref: 'api-documentation.file-api',
         specs: [
           'get-files',
@@ -199,7 +199,7 @@ angular.module('hackApp')
       },
       {
         id: 'datacenters',
-        name: 'Datacenters',
+        name: 'Manage your Data',
         ref: 'api-documentation.datacenters',
         specs: [
           'create-datacenter',
@@ -211,6 +211,18 @@ angular.module('hackApp')
           'delete-file'
         ]
       },
+       {
+        id: 'users',
+        name: 'Manage your Users',
+        ref: 'api-documentation.users',
+        specs: [
+          'create-user',
+          'delete-user',
+          'get-user',
+          'get-users',
+          'update-user'
+        ]
+      }/*,
       {
         id: 'datastore-api',
         name: 'DataStore API',
@@ -219,7 +231,7 @@ angular.module('hackApp')
           'upload-file',
           'delete-file'
         ]
-      }
+      }*/
 
     ])
 

@@ -3,7 +3,7 @@
   "docNumber" : "0.0.0",
   "displayWeight": "100",
   "name": "Create User",
-  "description": "",
+  "description": "Create a New User Account",
   "categories": ["users"],
   "subCategories": [],
   "resourceTable": {
