@@ -1,6 +1,6 @@
 {
   "id": "file-verify",
-  "docNumber" : "0.2.6",
+  "docNumber" : "0.2.5",
   "displayWeight": "100",
   "name": "File Verify",
   "description": "This call will verify the current state of the file, with what was stored originally by hashing the file on the server.",

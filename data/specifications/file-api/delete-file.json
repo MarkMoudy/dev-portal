@@ -1,8 +1,8 @@
 {
   "id": "delete-file",
-  "docNumber" : "0.2.3",
+  "docNumber" : "0.2.6",
   "displayWeight": "100",
-  "name": "Create File",
+  "name": "Delete File",
   "description": "Create a file entry containing metadata of a file. This must be done first before uploading a file. The algorithim used to hash the file can be sha1, ripemd160, sha256 (default), sha224, sha384 or sha512.",
   "categories": ["file-api"],
   "subCategories": [],

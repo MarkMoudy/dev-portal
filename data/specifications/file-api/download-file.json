@@ -1,6 +1,6 @@
 {
   "id": "download-file",
-  "docNumber" : "0.2.2",
+  "docNumber" : "0.2.3",
   "displayWeight": "100",
   "name": "Download File",
   "description": "Download a file.",

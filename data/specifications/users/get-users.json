@@ -1,6 +1,6 @@
 {
   "id": "get-users",
-  "docNumber" : "0.0.1",
+  "docNumber" : "0.0.4",
   "displayWeight": "100",
   "name": "Get Users",
   "description": "Get a list of Users.",

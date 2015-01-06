@@ -173,6 +173,7 @@ angular.module('hackApp')
           'update-user'
         ]
       },
+      /*
       {
         id: 'user-authentication',
         name: 'User Authentication',
@@ -181,6 +182,7 @@ angular.module('hackApp')
           'authenticate-user'
         ]
       },
+      */
       {
         id: 'file-api',
         name: 'Files',
@@ -204,7 +206,9 @@ angular.module('hackApp')
           'get-datacenters',
           'get-datacenter',
           'delete-datacenter',
-          'datacenter-regions'
+          'datacenter-regions',
+          'upload-file',
+          'delete-file'
         ]
       },
       {

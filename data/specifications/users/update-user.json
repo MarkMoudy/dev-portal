@@ -1,6 +1,6 @@
 {
   "id": "update-user",
-  "docNumber" : "0.0.0",
+  "docNumber" : "0.0.2",
   "displayWeight": "100",
   "name": "Update User",
   "description": "Update a user.",

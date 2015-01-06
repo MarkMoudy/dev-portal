@@ -1,6 +1,6 @@
 {
   "id": "get-user",
-  "docNumber" : "0.0.4",
+  "docNumber" : "0.0.3",
   "displayWeight": "100",
   "name": "Get User",
   "description": "A single user object with its details.",

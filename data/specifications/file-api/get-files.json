@@ -1,6 +1,6 @@
 {
   "id": "get-files",
-  "docNumber" : "0.2.0",
+  "docNumber" : "0.2.2",
   "displayWeight": "100",
   "name": "Get Files",
   "description": "Get a list of files.",
