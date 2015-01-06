@@ -366,7 +366,7 @@ h1 {
   bottom: 34px; }
 
 .content-area > .tabs > .tab {
-  width: calc(25% - 15px); }
+  width: calc(20% - 16px); }
 
 .side-menu {
   float: left;

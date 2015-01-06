@@ -256,5 +256,10 @@ angular.module('hackApp')
         id: 'animation-4',
         label: 'set-4',
         parameters: {}
+      },
+      {
+        id: 'animation-5',
+        label: 'set-5',
+        parameters: {}
       }
     ]);

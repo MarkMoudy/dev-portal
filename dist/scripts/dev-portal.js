@@ -355,6 +355,11 @@ angular.module('hackApp')
         id: 'animation-4',
         label: 'set-4',
         parameters: {}
+      },
+      {
+        id: 'animation-5',
+        label: 'set-5',
+        parameters: {}
       }
     ]);
 'use strict';
@@ -1191,36 +1196,6 @@ angular.module('uiKitApiService', [])
 
 'use strict';
 
-angular.module('apiExampleCardDirective', [])
-
-.constant('apiExampleCardTemplatePath', hack.rootPath + '/dist/templates/components/api-example-card/api-example-card.html')
-
-/**
- * @ngdoc directive
- * @name apiExampleCard
- * @requires apiExampleCardTemplatePath
- * @param {object} example
- * @description
- *
- * A panel used for displaying platform-specific examples of a single API call.
- */
-.directive('apiExampleCard', function (apiExampleCardTemplatePath) {
-  return {
-    restrict: 'E',
-    scope: {
-      apiItem: '='
-    },
-    templateUrl: apiExampleCardTemplatePath,
-    link: function (scope, element, attrs) {
-      scope.handleTabClick = function (platform) {
-        scope.apiItem.HackExamples.currentPlatform = platform;
-      };
-    }
-  };
-});
-
-'use strict';
-
 angular.module('animationsDirective', [])
 
 .constant('animationsTemplatePath', hack.rootPath + '/dist/templates/components/animations/animations.html')
@@ -1287,6 +1262,12 @@ angular.module('animationsDirective', [])
             document.getElementById('car-question-set-4-question-3')
           ];
 
+          var questionSet5 = [
+            document.getElementById('car-question-set-5-question-1'),
+            document.getElementById('car-question-set-5-question-2'),
+            document.getElementById('car-question-set-5-question-3')
+          ];
+
           scope.timeline = new TimelineMax();
 
           scope.timeline.add("start");
@@ -1315,6 +1296,12 @@ angular.module('animationsDirective', [])
           scope.timeline.add(TweenMax.staggerTo(questionSet4, 1, {x:"-60", alpha:0}, 0.3), "+=3");
           scope.timeline.add(TweenMax.to(carScreen, 0.75, {alpha:0}), "-=1");
 
+          scope.timeline.add("set-5", "+=2");
+          scope.timeline.add(TweenMax.to(carScreen, 1.5, {alpha:carScreenInitialAlpha}), "+=2");
+          scope.timeline.add(TweenMax.staggerFrom(questionSet5, 1.75, {x:"60", alpha:0}, 0.3), "-=1");
+          scope.timeline.add(TweenMax.staggerTo(questionSet5, 1, {x:"-60", alpha:0}, 0.3), "+=3");
+          scope.timeline.add(TweenMax.to(carScreen, 0.75, {alpha:0}), "-=1");
+
           scope.timeline.add("end");
 
           carouselInterval = $interval(function() {
@@ -1340,6 +1327,66 @@ angular.module('animationsDirective', [])
       function handleAnimationTabClick(animation, wasHumanClick) {
         scope.timeline.seek(animation.label, false);
       }
+    }
+  };
+});
+
+'use strict';
+
+angular.module('apiExampleCardDirective', [])
+
+.constant('apiExampleCardTemplatePath', hack.rootPath + '/dist/templates/components/api-example-card/api-example-card.html')
+
+/**
+ * @ngdoc directive
+ * @name apiExampleCard
+ * @requires apiExampleCardTemplatePath
+ * @param {object} example
+ * @description
+ *
+ * A panel used for displaying platform-specific examples of a single API call.
+ */
+.directive('apiExampleCard', function (apiExampleCardTemplatePath) {
+  return {
+    restrict: 'E',
+    scope: {
+      apiItem: '='
+    },
+    templateUrl: apiExampleCardTemplatePath,
+    link: function (scope, element, attrs) {
+      scope.handleTabClick = function (platform) {
+        scope.apiItem.HackExamples.currentPlatform = platform;
+      };
+    }
+  };
+});
+
+'use strict';
+
+angular.module('apiSpecificationCardDirective', [])
+
+.constant('apiSpecificationCardTemplatePath', hack.rootPath + '/dist/templates/components/api-specification-card/api-specification-card.html')
+
+/**
+ * @ngdoc directive
+ * @name apiSpecificationCard
+ * @requires apiSpecificationCardTemplatePath
+ * @param {Object} apiItem
+ * @description
+ *
+ * A panel used for displaying the specification for a single API call.
+ */
+.directive('apiSpecificationCard', function (apiSpecificationCardTemplatePath) {
+  return {
+    restrict: 'E',
+    scope: {
+      apiItem: '='
+    },
+    templateUrl: apiSpecificationCardTemplatePath,
+    link: function (scope, element, attrs) {
+      scope.isArray = function (input) {
+        return input instanceof Array;
+      };
     }
   };
 });
@@ -1405,80 +1452,6 @@ angular.module('apiListItemDirective', [])
           targetRef = targetRef + '.' + scope.apiItem.ref;
         
         $state.go(targetRef);
-      };
-    }
-  };
-});
-
-'use strict';
-
-angular.module('apiListDirective', [])
-
-.constant('apiListTemplatePath', hack.rootPath + '/dist/templates/components/api-list/api-list.html')
-
-/**
- * @ngdoc directive
- * @name apiList
- * @requires HackApi
- * @requires apiListTemplatePath
- * @description
- *
- * A footer list used for displaying a list of navigation links.
- */
-.directive('apiList', function ($rootScope, HackApi, apiListTemplatePath) {
-  return {
-    restrict: 'E',
-    scope: {
-      category: '='
-    },
-    templateUrl: apiListTemplatePath,
-    link: function (scope, element, attrs) {
-      scope.apiListState = {};
-      scope.apiListState.apiData = [];
-      scope.apiListState.selectedItemId = null;
-
-      HackApi.getAllApiData()
-          .then(function (apiData) {
-            scope.apiListState.apiData = apiData;
-
-            if ($rootScope.selectedApi != null) {
-              scope.apiListState.selectedItemId = $rootScope.selectedApi.replace(/_/g, '.');
-              console.log(scope.apiListState.selectedItemId);
-            }
-          });
-
-      scope.$watch('category', function () {
-        scope.apiListState.selectedItemId = null;
-      });
-    }
-  };
-});
-
-'use strict';
-
-angular.module('apiSpecificationCardDirective', [])
-
-.constant('apiSpecificationCardTemplatePath', hack.rootPath + '/dist/templates/components/api-specification-card/api-specification-card.html')
-
-/**
- * @ngdoc directive
- * @name apiSpecificationCard
- * @requires apiSpecificationCardTemplatePath
- * @param {Object} apiItem
- * @description
- *
- * A panel used for displaying the specification for a single API call.
- */
-.directive('apiSpecificationCard', function (apiSpecificationCardTemplatePath) {
-  return {
-    restrict: 'E',
-    scope: {
-      apiItem: '='
-    },
-    templateUrl: apiSpecificationCardTemplatePath,
-    link: function (scope, element, attrs) {
-      scope.isArray = function (input) {
-        return input instanceof Array;
       };
     }
   };
@@ -1671,6 +1644,50 @@ angular.module('apiTryItCardDirective', [])
   };
 });
 
+'use strict';
+
+angular.module('apiListDirective', [])
+
+.constant('apiListTemplatePath', hack.rootPath + '/dist/templates/components/api-list/api-list.html')
+
+/**
+ * @ngdoc directive
+ * @name apiList
+ * @requires HackApi
+ * @requires apiListTemplatePath
+ * @description
+ *
+ * A footer list used for displaying a list of navigation links.
+ */
+.directive('apiList', function ($rootScope, HackApi, apiListTemplatePath) {
+  return {
+    restrict: 'E',
+    scope: {
+      category: '='
+    },
+    templateUrl: apiListTemplatePath,
+    link: function (scope, element, attrs) {
+      scope.apiListState = {};
+      scope.apiListState.apiData = [];
+      scope.apiListState.selectedItemId = null;
+
+      HackApi.getAllApiData()
+          .then(function (apiData) {
+            scope.apiListState.apiData = apiData;
+
+            if ($rootScope.selectedApi != null) {
+              scope.apiListState.selectedItemId = $rootScope.selectedApi.replace(/_/g, '.');
+              console.log(scope.apiListState.selectedItemId);
+            }
+          });
+
+      scope.$watch('category', function () {
+        scope.apiListState.selectedItemId = null;
+      });
+    }
+  };
+});
+
 angular.module('markdownBlockDirective', [])
 
     .directive('markdownBlock', function ($compile, $timeout) {
@@ -1706,20 +1723,6 @@ angular.module('markdownBlockDirective', [])
       };
     });
 
-'use strict';
-
-angular.module('apiDocumentationController', [])
-
-/**
- * @ngdoc object
- * @name ApiDocumentationCtrl
- * @description
- *
- * Controller for the API Documentation page.
- */
-.controller('ApiDocumentationCtrl', function () {
-});
-
 angular.module('driveApiController', [])
     // TODO: rename this route; rename other routes; add other routes
     .controller('DriveApiCtrl', function ($scope, UiKitApi) {
@@ -1747,6 +1750,20 @@ angular.module('driveApiController', [])
         $scope.sampleAppsState.selectedSection = section;
       }
     });
+
+'use strict';
+
+angular.module('apiDocumentationController', [])
+
+/**
+ * @ngdoc object
+ * @name ApiDocumentationCtrl
+ * @description
+ *
+ * Controller for the API Documentation page.
+ */
+.controller('ApiDocumentationCtrl', function () {
+});
 
 'use strict';
 
