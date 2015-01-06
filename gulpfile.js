@@ -9,8 +9,8 @@ var projectName = 'hackathon-portal',
   */  
 var projectName = 'dev-portal',
 
-    rootPath = '/dev-portal',
-    //rootPath = '',
+    // rootPath = '/dev-portal',
+    rootPath = '',
 
     testsSrc = 'src/**/*_test.js',
     dataWebExamplesTestsSrc = 'data/examples/web/**/*_test.js',

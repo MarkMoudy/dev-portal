@@ -1,0 +1,44 @@
+{
+  "id": "file-status",
+  "docNumber" : "0.2.4",
+  "displayWeight": "100",
+  "name": "File Status",
+  "description": "Check status of a file.",
+  "categories": ["file-api"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/files/{id}/status",
+    "HTTP Verb": ["GET"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "id",
+        "type": "Number",
+        "required": true,
+        "defaultVal": "",
+        "description": "Unique id of file metadata entry."
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+    401
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "GET",
+      "route": "/dataguard/v1/files/549886e75a98ed19d33c569c/status"
+    },
+    {
+      "type": "response",
+      "body": {
+        "integrity": true,
+        "compliance": true
+      }
+    }
+  ]
+}

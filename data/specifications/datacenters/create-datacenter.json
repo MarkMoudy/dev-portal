@@ -1,0 +1,61 @@
+{
+  "id": "create-datacenter",
+  "docNumber" : "0.3.0",
+  "displayWeight": "100",
+  "name": "Create Datacenter",
+  "description": "Register and create a new datacenter. If the datacenter already exists the api will only update the last seen time for the data center and return a message of 'Datacenter already exists in system, Only updating Last Seen Time'",
+  "categories": ["datacenters"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/datacenters",
+    "HTTP Verb": ["POST"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "name",
+        "type": "String",
+        "required": true,
+        "defaultVal": "",
+        "description": "Name of the datacenter."
+      },
+      {
+        "key": "regoin",
+        "type": "String",
+        "required": true,
+        "defaultVal": "",
+        "description": "Region of the datacenter."
+      },
+      {
+        "key": "uri",
+        "type": "String",
+        "required": true,
+        "defaultVal": ""
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "POST",
+      "route": "/dataguard/v1/datacenters",
+      "body": {
+        "name": "DC-NA-US-02",
+        "region": "North America",
+        "uri": "http://127.0.0.1:9000/dataguardstore/v1"
+      }
+    },
+    {
+      "type": "response",
+      "body": {
+        "key": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFvMHFMVFIrUExzS0JZTTQvODMxRAp2SVdJWVR3MlJoa3dHU3E2VFJDenRqMUEzZHUyM3hkU2ZCQ1padHlMMmNRUUZab3p0TmpoUzVqMG9DMmIxaUFECk1xV0RUWG1kaUV3MEtZQkdPZnZBZjI2VU5EVWNRc0hJQnZtdUhPNjZQV2Y4U0EwRk1BQkNiLzdtSzFnUGJqK0QKeVNHeTREK3lCQ1I4WWZPSUlHRGZqQlY3MVo2Y1B3VDAwSzdieFVNWnJyOHhSaXVqM3ZIQXFwU1c2d09nZHp5bApHMFRuYWVvcHpkS2ZPQWJXVElFMFcvbXRSa2UvMWlha2haNjdockErVzNNRTVGd2hZVitveElmSkhjV2RaWjJWCmtLeWxpck04cHo2V2t2K2dtT3dzcUpKdkQ2TUthOVErdkNBOVh3VEF6NUhUSURHQmNpVWJseUFJS0ZtN1FEL0kKQ3dJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==",
+        "message": "Created new DataCenter Entry"
+      }
+    }
+  ]
+}

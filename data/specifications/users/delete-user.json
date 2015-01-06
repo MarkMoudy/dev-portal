@@ -1,0 +1,43 @@
+{
+  "id": "delete-user",
+  "docNumber" : "0.0.5",
+  "displayWeight": "100",
+  "name": "Delete User",
+  "description": "Delete a user account.",
+  "categories": ["users"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/users/{id}",
+    "HTTP Verb": ["DELETE"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "id",
+        "type": "Number",
+        "required": true,
+        "defaultVal": "",
+        "description": "The unique id of the user."
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+    400,
+    404
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "DELETE",
+      "route": "/dataguard/v1/users/549886e75a98ed19d33c569c"
+    },
+    {
+      "type": "response",
+      "body": {
+      }
+    }
+  ]
+}

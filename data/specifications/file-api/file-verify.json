@@ -1,0 +1,45 @@
+{
+  "id": "file-verify",
+  "docNumber" : "0.2.6",
+  "displayWeight": "100",
+  "name": "File Verify",
+  "description": "This call will verify the current state of the file, with what was stored originally by hashing the file on the server.",
+  "categories": ["file-api"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/files/{id}/verify",
+    "HTTP Verb": ["GET"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "id",
+        "type": "Number",
+        "required": true,
+        "defaultVal": "",
+        "description": "Unique id of file metadata entry."
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+    401,
+    404
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "GET",
+      "route": "/dataguard/v1/files/549886e75a98ed19d33c569c/verify"
+    },
+    {
+      "type": "response",
+      "body": {
+        "integrity": true,
+        "compliance": true
+      }
+    }
+  ]
+}

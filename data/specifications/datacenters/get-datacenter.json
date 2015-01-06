@@ -1,0 +1,48 @@
+{
+  "id": "get-datacenter",
+  "docNumber" : "0.3.2",
+  "displayWeight": "100",
+  "name": "Get Datacenter",
+  "description": "Get details about a single datacenter.",
+  "categories": ["datacenters"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/datacenters/{id}",
+    "HTTP Verb": ["GET"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "id",
+        "type": "Number",
+        "required": true,
+        "defaultVal": "",
+        "description": "Unique id of the datacenter entry."
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+    404
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "GET",
+      "route": "/dataguard/v1/datacenters/549886e75a98ed19d33c569c"
+    },
+    {
+      "type": "response",
+      "body": {
+        "id": "549886e75a98ed19d33c569c",
+        "name": "DC-NA-US-02",
+        "region": "North America",
+        "uri": "http://127.0.0.1:9000/dataguardstore/v1",
+        "StoragePath": "",
+        "LastSeen": "2014-12-22T21:02:31.347Z"
+      }
+    }
+  ]
+}

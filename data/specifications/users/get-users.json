@@ -1,0 +1,44 @@
+{
+  "id": "get-users",
+  "docNumber" : "0.0.1",
+  "displayWeight": "100",
+  "name": "Get Users",
+  "description": "Get a list of Users.",
+  "categories": ["users"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/users/",
+    "HTTP Verb": ["GET"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    
+  },
+  "errors": [
+    204
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "GET",
+      "route": "/dataguard/v1/users/"
+    },
+    {
+      "type": "response",
+      "body": [
+        {
+          "id": "54861810e68a9775d0000001",
+          "email": "hans@jeditricks.com",
+          "name": "Han Solo",
+          "region": "North America"
+        },
+        {
+          "id": "54873962e68a9787a8000001",
+          "email": "hans2@jeditricks.com",
+          "name": "Han Solo",
+          "region": "South America"
+        }
+      ]
+    }
+  ]
+}

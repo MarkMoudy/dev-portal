@@ -1,0 +1,29 @@
+{
+  "id": "delete-file",
+  "docNumber" : "0.2.3",
+  "displayWeight": "100",
+  "name": "Create File",
+  "description": "Create a file entry containing metadata of a file. This must be done first before uploading a file. The algorithim used to hash the file can be sha1, ripemd160, sha256 (default), sha224, sha384 or sha512.",
+  "categories": ["file-api"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/files/{id}",
+    "HTTP Verb": ["DELETE"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+
+  },
+  "errors": [
+    204,
+    401,
+    404
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "DELETE",
+      "route": "/dataguard/v1/files/549886e75a98ed19d33c569c"
+    }
+  ]
+}

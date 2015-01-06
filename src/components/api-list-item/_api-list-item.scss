@@ -1,4 +1,5 @@
-$api-list-item-header-height: 35px;
+$api-list-item-header-height: 40px;
+$api-list-item-header-lineheight: 35px;
 $api-list-item-margin: 8px;
 $api-list-item-body-content-margin-top: 14px;
 $api-list-item-body-content-padding-bottom: 35px;
@@ -30,7 +31,7 @@ li[api-list-item]>hr.divider {
 .api-list-item-header {
   position: relative;
   height: $api-list-item-header-height;
-  line-height: $api-list-item-header-height;
+  line-height: $api-list-item-header-lineheight;
   overflow-x: visible;
   overflow-y: hidden;
   vertical-align: middle;
@@ -40,7 +41,7 @@ li[api-list-item]>hr.divider {
 }
 
 .api-list-item-header>div {
-  line-height: $api-list-item-header-height + 5;
+  line-height: $api-list-item-header-height;
 }
 
 .api-list-item-header>.verb {
@@ -51,6 +52,7 @@ li[api-list-item]>hr.divider {
   background-color: $verb-inactive-background-color;
   text-align: center;
   transition: color 0.15s, background-color 0.15s;
+  border-radius: 3px;
 }
 
 .api-list-item-header>.route {

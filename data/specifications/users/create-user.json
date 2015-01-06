@@ -1,0 +1,67 @@
+{
+  "id": "create-user",
+  "docNumber" : "0.0.3",
+  "displayWeight": "100",
+  "name": "Create User",
+  "description": "",
+  "categories": ["users"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/users",
+    "HTTP Verb": ["POST"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "email",
+        "type": "String",
+        "required": true,
+        "defaultVal": "",
+        "description": "The email address of the user. New registration will be rejected if an existing user record with a matching email address is found."
+      },
+      {
+        "key": "name",
+        "type": "string",
+        "required": true,
+        "defaultVal": "The name of the user."
+      },
+      {
+        "key": "password",
+        "type": "string",
+        "required": true,
+        "description": "The password to authenticate the user. NOTE: UNSECURE, until removed this password exists only to keep sessions seperate and allow for multiple users."
+      },
+      {
+        "key": "region",
+        "type": "string",
+        "required": true,
+        "description": "The region of the user, used to determine storage compliance."
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+    409
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "POST",
+      "route": "/dataguard/v1/users",
+      "body": {
+        "email": "hans@jeditricks.com",
+        "name": "Han Solo",
+        "password": "falcon4life",
+        "region": "North America"
+      }
+    },
+    {
+      "type": "response",
+      "body": {
+        "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0MTgyMzQxMjEsImlkIjoiNTQ4NzM3ODllNjhhOTc3YjRiMDAwMDAyIiwicmVnaW9uIjoiTm9ydGggQW1lcmljYSJ9.XbbOxWOvROOx1ZISZ8aQfg256-WxAESnmBHwA9Plgm8CVndVuxiW-BrV_5YoQiFzqvwRW5nEO0ENk9gkY8dNPw"
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "authenticate-user",
+  "docNumber" : "0.1.0",
+  "displayWeight": "100",
+  "name": "Authenticate a User",
+  "description": "Authentication method to retreive user token. Set this token under the HTTP Header Authentication to access files resources.",
+  "categories": ["user-authentication"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/authenticate",
+    "HTTP Verb": ["POST"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "email",
+        "type": "string",
+        "required": true,
+        "defaultVal": "",
+        "description": "The email of the user."
+      },
+      {
+        "key": "password",
+        "type": "string",
+        "required": true,
+        "defaultVal": "",
+        "description": "The password of the user."
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+    400,
+    404
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "POST",
+      "route": "/dataguard/v1/users/549886e75a98ed19d33c569c",
+      "body": {
+        "email": "hans@jeditricks.com",
+        "password": "falcon4life"
+      }
+    },
+    {
+      "type": "response",
+      "body": {
+        "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0MTgxNzEwNDIsImlkIjoiNTQ4NjE4MTBlNjhhOTc3NWQwMDAwMDAxIiwicmVnaW9uIjoiTm9ydGggQW1lcmljYSJ9.jS3wGPhZa7NWZp2R773qVpocYH_LdTEIxUHq7dzGuERgGtOWNVnV3Z8EYD_H0_uMf_4VF_qbuxJIkl7X6P8CKg"
+      }
+    }
+  ]
+}

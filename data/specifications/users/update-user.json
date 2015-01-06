@@ -1,0 +1,43 @@
+{
+  "id": "update-user",
+  "docNumber" : "0.0.0",
+  "displayWeight": "100",
+  "name": "Update User",
+  "description": "Update a user.",
+  "categories": ["users"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/users/{id}",
+    "HTTP Verb": ["PUT"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody": [
+      {
+        "key": "id",
+        "type": "Number",
+        "required": true,
+        "defaultVal": "",
+        "description": "The unique id of the user."
+      }
+    ],
+    "responseBody": [
+    ]
+  },
+  "errors": [
+    400,
+    404
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "PUT",
+      "route": "/dataguard/v1/users/549886e75a98ed19d33c569c"
+    },
+    {
+      "type": "response",
+      "body": {
+      }
+    }
+  ]
+}

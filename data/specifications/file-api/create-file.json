@@ -1,0 +1,80 @@
+{
+  "id": "create-file",
+  "docNumber" : "0.2.1",
+  "displayWeight": "100",
+  "name": "Create File",
+  "description": "Create a file entry containing metadata of a file. This must be done first before uploading a file. The algorithim used to hash the file can be sha1, ripemd160, sha256 (default), sha224, sha384 or sha512.",
+  "categories": ["file-api"],
+  "subCategories": [],
+  "resourceTable": {
+    "Route": "/dataguard/v1/files",
+    "HTTP Verb": ["POST"],
+    "Authentication": "Basic Authentication"
+  },
+  "parameters": {
+    "requestBody" : {
+      "filename": "millennium_falcon_repair_manual.pdf",
+      "hash": "dfe5a25fea2fc883ec0e18f7eb90e5d1da9938526b363c79488f914c77617982",
+      "algorithm": "sha256",
+      "restrictions": {
+        "region": "Any",
+        "storetype": "Any"
+      }
+    }
+  },
+  "errors": [
+    204,
+    401
+  ],
+  "examples": [
+    {
+      "type": "request",
+      "verb": "POST",
+      "route": "/dataguard/v1/files",
+      "body": {
+        "filename": "millennium_falcon_repair_manual.pdf",
+        "hash": "dfe5a25fea2fc883ec0e18f7eb90e5d1da9938526b363c79488f914c77617982",
+        "algorithm": "sha256",
+        "restrictions": {
+          "region": "Any",
+          "storetype": "Any"
+        }
+      }
+    },
+    {
+      "type": "response",
+      "body": {
+        "id": "54874585e68a97881e000002",
+        "owner": {
+          "id": "54861810e68a9775d0000001",
+          "email": "hans@jeditricks.com",
+          "name": "Han Solo",
+          "region": "North America"
+        },
+        "filename": "millennium_falcon_repair_manual.pdf",
+        "hash": "dfe5a25fea2fc883ec0e18f7eb90e5d1da9938526b363c79488f914c77617982",
+        "algorithm": "sha256",
+        "filelocation": "http://api-ex.com/dataguard/v1/files/54874585e68a97881e000002/download",
+        "status": {
+          "integrity": true,
+          "compliance": false
+        },
+        "restrictions": {
+          "region": "Any",
+          "storetype": "Any"
+        },
+        "signature": {
+          "token": "",
+          "properties": {
+            "registered_time": "2014-12-05T18:20:54.000Z",
+            "policy": "1.3.6.1.4.1.27868.2.1.1",
+            "hash_algorithm": "SHA256",
+            "hash_value": "df:e5:a2:5f:ea:2f:c8:83:ec:0e:18:f7:eb:90:e5:d1:da:99:38:52:6b:36:3c:79:48:8f:91:4c:77:61:79:82",
+            "issuer_name": "DNS:stamper.us.guardtime.net",
+            "public_key_fingerprint": "AAAAAA-CQWNRU-4ALKVI-B4WYCS-GVC6WZ-7BROEM-5BDLAM-QBYYLI-YX7YMT-Y27HAE-RJJROX-QQGAFH"
+          }
+        }
+      }
+    }
+  ]
+}
