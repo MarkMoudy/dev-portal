@@ -76,6 +76,15 @@ setInterval('cycleImages()', 7000);
 })
    </script>
    <style>
+
+        html, body {
+        height: 100%;
+        margin: 0;
+      }
+
+      #wrapper {
+        min-height: 100%; 
+      }
        .imgcontainer {
            margin: 10px;
            float: left;
@@ -89,12 +98,23 @@ setInterval('cycleImages()', 7000);
            color: #ffffff;
            display: none;
        }
-       .img {
-           clear: both;
+       img {
+          top:50px;
+          vertical-align: middle;
+          clear: both;
        }
-       #cycler{position:relative;}
-       #cycler img{position:absolute;z-index:1}
-       #cycler img.active{z-index:3}
+       #cycler{position:relative;
+        min-height: 100%; 
+        vertical-align: middle;
+      }
+       #cycler img{
+          vertical-align: middle;
+          position:absolute;
+          z-index:1
+        }
+       #cycler img.active{         
+        vertical-align: middle;
+        z-index:3}
    </style>
 
 </head>
