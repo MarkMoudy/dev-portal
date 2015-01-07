@@ -101,13 +101,16 @@ setInterval('cycleImages()', 7000);
        img {
           top:50px;
           vertical-align: middle;
+          float: center;
           clear: both;
        }
        #cycler{position:relative;
         min-height: 100%; 
-        vertical-align: middle;
       }
        #cycler img{
+          margin: auto;
+          top: 0; left: 0; bottom: 0; right: 0;
+          width:2000px;
           vertical-align: middle;
           position:absolute;
           z-index:1
